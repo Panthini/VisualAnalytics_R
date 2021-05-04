@@ -1,4 +1,4 @@
-#Task 4.1
+#Task 4
 
 library(ggplot2)
 install.packages("ggmap")
@@ -25,19 +25,3 @@ ggmap(map) +
   geom_point(data = subset(crime, offense == 'rape'),
              aes(x = lon, y= lat), size = 0.8) +
   ggtitle('Crime Density of rape in Houston area')
-
-
-#TASK 4.2
-
-graph1 <- c(left = -95.8, bottom = 29.4, right = -95.0, top = 30.0)
-map1 <- get_stamenmap(graph, zoom = 9, source = "stamen")
-
-install.packages("chron")
-library(chron)
-
-crime$date <- as.Date(crime$date, "%Y/%m/%d")
-
-Date1 <- as.Date(crime$date, "01/03/2010")
-Date2 <- as.Date(crime$date, "30/04/2010")
-
-date1 <- seq.dates(01/03/2010, 30/04/2010, by = "days")
